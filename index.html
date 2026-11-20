@@ -31,6 +31,13 @@ h2{font-size:15px;margin:0}
 .src{font-size:12px;margin-top:auto}
 .src a{color:var(--acc)}
 .badge{display:inline-block;font-size:11px;background:#e6f2ec;color:var(--acc);border-radius:20px;padding:2px 8px;margin-right:4px}
+.toolkit-banner{background:#e6f2ec;border-bottom:1px solid var(--line);padding:10px 16px;font-size:13.5px;color:var(--ink)}
+.toolkit-banner .wrap{max-width:1080px;margin:0 auto}
+.toolkit-banner a{color:var(--acc);font-weight:600;text-decoration:none;white-space:nowrap}
+.toolkit-banner a:hover{text-decoration:underline}
+.toolkit-link{font-size:12px}
+.toolkit-link a{color:var(--acc);text-decoration:none}
+.toolkit-link a:hover{text-decoration:underline}
 footer{max-width:1080px;margin:0 auto;padding:0 16px 30px;color:var(--mut);font-size:12.5px;line-height:1.6}
 </style>
 </head>
@@ -40,6 +47,7 @@ footer{max-width:1080px;margin:0 auto;padding:0 16px 30px;color:var(--mut);font-
 <p>Vacant houses &amp; land from municipal akiya banks in <b>Kochi</b> and <b>Ehime</b>, Shikoku, Japan — translated and summarised in English.</p>
 <p id="hdr-meta"></p>
 </div></header>
+<div class="toolkit-banner"><div class="wrap">Buying an akiya? Get the complete toolkit — checklists, cost calculator &amp; bilingual email templates. <a href="https://kouno5.gumroad.com/l/jkaaca" target="_blank" rel="noopener">$49 one-time →</a></div></div>
 <div class="controls"><div class="wrap">
 <input id="q" type="search" placeholder="Search town, district, keyword…">
 <select id="f-pref"><option value="">All prefectures</option></select>
@@ -90,6 +98,7 @@ function render(){
    +'<p class="notes"><b>Good to know:</b> '+d.notes_en+'</p>'
    +'<div class="src"><span class="badge">'+d.id+'</span>'+(d.detail_verified?'<span class="badge">Details verified</span>':'')
    +'Source: <a href="'+d.source_url+'" target="_blank" rel="noopener">LIFULL HOME\'S Akiya Bank</a></div>'
+   +'<div class="toolkit-link"><a href="https://kouno5.gumroad.com/l/jkaaca" target="_blank" rel="noopener">Use the Akiya Buyer OS toolkit to calculate the true total cost →</a></div>'
    +'</div></article>'}).join('');
 }
 ['q','f-pref','f-muni','f-type','f-price','f-sort'].forEach(id=>$(id).addEventListener('input',()=>{if(id==='f-pref')fillMuni();render()}));
